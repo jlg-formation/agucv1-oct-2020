@@ -1,18 +1,18 @@
-console.log("starting server");
-
 const express = require("express");
 const serveIndex = require("serve-index");
 
 const app = express();
+const www = ".";
+const port = 3000;
 
 app.use((req, res, next) => {
   console.log("req.url", req.url);
   next();
 });
 
-app.use(express.static("."));
-app.use(serveIndex(".", { icons: true }));
+app.use(express.static(www));
+app.use(serveIndex(www, { icons: true }));
 
-app.listen(3000, () => {
-  console.log("server started on port 3000");
+app.listen(port, () => {
+  console.log(`server started on port ${port}`);
 });
