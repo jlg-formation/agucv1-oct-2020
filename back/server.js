@@ -13,6 +13,4 @@ app.use((req, res, next) => {
 app.use(express.static(www));
 app.use(serveIndex(www, { icons: true }));
 
-app.listen(port, () => {
-  console.log(`server started on port ${port}`);
-});
+app.listen(port, () => console.log(`server started on port ${port}`));
