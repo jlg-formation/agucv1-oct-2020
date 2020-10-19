@@ -5,14 +5,13 @@ const serveIndex = require("serve-index");
 
 const app = express();
 
-app.get("/titi", (req, res, next) => {
+app.use((req, res, next) => {
   console.log("req.url", req.url);
   next();
 });
 
-app.get("/titi", (req, res, next) => {
-  res.end("hello world");
-});
+app.use(express.static("."));
+app.use(serveIndex(".", { icons: true }));
 
 app.listen(3000, () => {
   console.log("server started on port 3000");
