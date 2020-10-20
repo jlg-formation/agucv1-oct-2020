@@ -2,7 +2,7 @@ import express from "express";
 import serveIndex from "serve-index";
 
 const app = express();
-const www = ".";
+const www = "../front/dist/front";
 const port = 3000;
 
 app.use((req, res, next) => {
