@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
+import { ArticleService } from './services/article.service';
+import { HttpArticleService } from './services/http-article.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LegalComponent],
@@ -14,6 +16,10 @@ import { LegalComponent } from './routes/legal/legal.component';
     {
       provide: DEFAULT_CURRENCY_CODE,
       useValue: 'EUR',
+    },
+    {
+      provide: ArticleService,
+      useClass: HttpArticleService,
     },
   ],
   bootstrap: [AppComponent],
