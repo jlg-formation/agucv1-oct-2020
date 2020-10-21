@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../interfaces/article';
 import { ArticleService } from '../services/article.service';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import {
+  faRedoAlt,
+  faPlus,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-stock',
@@ -9,7 +13,9 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./stock.component.scss'],
 })
 export class StockComponent implements OnInit {
-  faCoffee = faCoffee;
+  faRedoAlt = faRedoAlt;
+  faPlus = faPlus;
+  faTrashAlt = faTrashAlt;
 
   selectedArticles: Article[] = [];
   constructor(public articleService: ArticleService) {}
@@ -28,5 +34,9 @@ export class StockComponent implements OnInit {
   remove(): void {
     console.log('remove');
     this.articleService.remove(this.selectedArticles);
+  }
+
+  refresh(): void {
+    this.articleService.refresh();
   }
 }

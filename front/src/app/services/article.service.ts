@@ -39,4 +39,8 @@ export class ArticleService {
     );
     this.save();
   }
+
+  refresh(): void {
+    this.articles = this.getArticles();
+  }
 }
