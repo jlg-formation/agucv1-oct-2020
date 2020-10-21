@@ -31,4 +31,14 @@ table {
   td.price {
     white-space: nowrap;
   }
+
+  tr:not(.header) {
+    cursor: pointer;
+    &:hover {
+      background: #ddd;
+    }
+    &.selected {
+      background: #ccc;
+    }
+  }
 }

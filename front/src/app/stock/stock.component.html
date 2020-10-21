@@ -14,7 +14,11 @@
         <th scope="col">Prix</th>
         <th scope="col">Quantité</th>
       </tr>
-      <tr *ngFor="let a of articleService.articles">
+      <tr
+        *ngFor="let a of articleService.articles"
+        [class.selected]="selectedArticles.includes(a)"
+        (click)="toggle(a)"
+      >
         <td class="name" [title]="a.name">{{ a.name | ellipsis: 15 }}</td>
         <td class="price">{{ a.price | currency }}</td>
         <td class="qty">{{ a.qty }}</td>
