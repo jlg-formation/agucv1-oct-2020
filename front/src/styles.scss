@@ -55,3 +55,25 @@ main {
   width: 100%;
   max-width: 50em;
 }
+
+form {
+  width: 19em;
+  display: flex;
+  flex-flow: column;
+
+  nav {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+label {
+  margin-bottom: 0.5em;
+}
+
+input {
+  border: 0.1em solid #ccc;
+  padding: 0.5em 1em;
+  width: 100%;
+}
