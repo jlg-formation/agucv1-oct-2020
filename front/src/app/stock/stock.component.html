@@ -14,40 +14,10 @@
         <th scope="col">Prix</th>
         <th scope="col">Quantité</th>
       </tr>
-      <tr>
-        <td class="name">Tournevis cruciforme</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">450</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">450</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">10.20 €</td>
-        <td class="qty">450</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">3</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">450</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">450</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.20 €</td>
-        <td class="qty">450</td>
+      <tr *ngFor="let a of articles">
+        <td class="name">{{ a.name }}</td>
+        <td class="price">{{ a.price | currency }}</td>
+        <td class="qty">{{ a.qty }}</td>
       </tr>
     </table>
   </div>
