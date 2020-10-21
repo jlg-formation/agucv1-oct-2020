@@ -4,7 +4,9 @@
     <nav>
       <button>Rafraichir</button>
       <button routerLink="create">Ajouter</button>
-      <button *ngIf="selectedArticles.length > 0">Supprimer</button>
+      <button (click)="remove()" *ngIf="selectedArticles.length > 0">
+        Supprimer
+      </button>
     </nav>
     <table>
       <caption>
