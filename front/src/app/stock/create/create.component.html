@@ -1,17 +1,17 @@
 <main>
   <h1>Ajouter un article</h1>
-  <form>
+  <form [formGroup]="f">
     <label>
       <div>Nom</div>
-      <input type="text" appAutofocus />
+      <input type="text" appAutofocus formControlName="name" />
     </label>
     <label>
       <div>Prix</div>
-      <input type="number" />
+      <input type="number" formControlName="price" />
     </label>
     <label>
       <div>Quantité</div>
-      <input type="number" />
+      <input type="number" formControlName="qty" />
     </label>
     <nav>
       <button>Annuler</button>
