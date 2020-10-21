@@ -15,7 +15,7 @@
         <th scope="col">Quantité</th>
       </tr>
       <tr *ngFor="let a of articles">
-        <td class="name">{{ a.name }}</td>
+        <td class="name" [title]="a.name">{{ a.name | ellipsis: 15 }}</td>
         <td class="price">{{ a.price | currency }}</td>
         <td class="qty">{{ a.qty }}</td>
       </tr>
