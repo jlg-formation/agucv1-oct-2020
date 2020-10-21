@@ -2,7 +2,7 @@
   <h1>Liste des articles</h1>
   <div>
     <nav>
-      <button>Rafraichir</button>
+      <button><fa-icon [icon]="faCoffee"></fa-icon></button>
       <button routerLink="create">Ajouter</button>
       <button (click)="remove()" *ngIf="selectedArticles.length > 0">
         Supprimer
