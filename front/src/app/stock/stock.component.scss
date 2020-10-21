@@ -27,4 +27,8 @@ table {
   td.qty {
     text-align: right;
   }
+
+  td.price {
+    white-space: nowrap;
+  }
 }
