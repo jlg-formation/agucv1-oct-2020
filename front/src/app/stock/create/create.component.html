@@ -1,6 +1,6 @@
 <main>
   <h1>Ajouter un article</h1>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Nom</div>
       <input type="text" appAutofocus formControlName="name" />
@@ -14,8 +14,10 @@
       <input type="number" formControlName="qty" />
     </label>
     <nav>
-      <button>Annuler</button>
-      <button class="primary">Ajouter</button>
+      <button type="button" routerLink="..">Annuler</button>
+      <button type="submit" class="primary" [disabled]="f.invalid">
+        Ajouter
+      </button>
     </nav>
   </form>
 </main>
