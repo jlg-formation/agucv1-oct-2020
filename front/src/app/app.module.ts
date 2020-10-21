@@ -8,10 +8,11 @@ import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { ArticleService } from './services/article.service';
 import { HttpArticleService } from './services/http-article.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LegalComponent],
-  imports: [BrowserModule, AppRoutingModule, LayoutModule],
+  imports: [BrowserModule, AppRoutingModule, LayoutModule, HttpClientModule],
   providers: [
     {
       provide: DEFAULT_CURRENCY_CODE,
