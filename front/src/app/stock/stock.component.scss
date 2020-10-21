@@ -1,0 +1,30 @@
+nav {
+  button {
+    margin-right: 0.3em;
+  }
+}
+
+table {
+  margin-top: 0.5em;
+  border: 0.1em solid #ccc;
+  border-collapse: collapse;
+  th {
+    background: #ccc;
+  }
+  caption {
+    display: none;
+  }
+  th,
+  td {
+    padding: 0.5em;
+  }
+
+  tr:not(.header):nth-child(even) {
+    background: #eee;
+  }
+
+  td.price,
+  td.qty {
+    text-align: right;
+  }
+}
