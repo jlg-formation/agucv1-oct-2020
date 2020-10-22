@@ -5,6 +5,7 @@ import { crudity } from "crudity";
 import { Article } from "../front/src/app/interfaces/article";
 
 const app = express();
+app.disable("x-powered-by");
 const www = "../front/dist/front";
 const port = 3000;
 
