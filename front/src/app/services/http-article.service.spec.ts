@@ -28,4 +28,25 @@ describe('HttpArticleService', () => {
     req.flush([]);
     expect(service).toBeTruthy();
   });
+
+  it('should be created with 404 not found', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush('', { status: 404, statusText: 'not found' });
+    expect(service).toBeTruthy();
+  });
+
+  it('should add a article', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    service.add({ name: 'titi', price: 123, qty: 100 });
+    const req2 = http.expectOne('/ws/articles');
+    expect(req2.request.method).toEqual('POST');
+    req2.flush('');
+    const req3 = http.expectOne('/ws/articles');
+    expect(req3.request.method).toEqual('GET');
+    req3.flush([]);
+    expect(service).toBeTruthy();
+  });
 });

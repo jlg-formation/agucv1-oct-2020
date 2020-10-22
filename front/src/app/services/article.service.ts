@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from '../interfaces/article';
+import { Article, NewArticle } from '../interfaces/article';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +21,11 @@ export class ArticleService {
     localStorage.setItem('articles', JSON.stringify(this.articles));
   }
 
-  add(a: Article): void {
-    this.articles.push(a);
+  add(a: NewArticle): void {
+    if (!a) {
+      throw new Error('article is undefined');
+    }
+    this.articles.push(a as Article);
     this.save();
   }
 

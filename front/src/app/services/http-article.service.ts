@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ArticleService } from './article.service';
-import { Article } from '../interfaces/article';
+import { Article, NewArticle } from '../interfaces/article';
 
 const url = '/ws/articles';
 
@@ -30,7 +30,7 @@ export class HttpArticleService extends ArticleService {
     });
   }
 
-  add(a: Article): void {
+  add(a: NewArticle): void {
     super.add(a);
     this.http.post<void>(url, a).subscribe({
       next: () => {

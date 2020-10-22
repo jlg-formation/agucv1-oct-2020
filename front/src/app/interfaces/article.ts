@@ -4,3 +4,9 @@ export interface Article {
   price: number;
   qty: number;
 }
+
+export interface NewArticle {
+  name: string;
+  price: number;
+  qty: number;
+}
