@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Article } from '../interfaces/article';
 import { WidgetModule } from '../widget/widget.module';
 
 import { StockComponent } from './stock.component';
@@ -21,6 +22,14 @@ describe('StockComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should toggle', () => {
+    const a: Article = { id: 'asdfafsd', name: 'asdfafds', price: 123, qty: 2 };
+
+    component.toggle(a);
+    component.toggle(a);
     expect(component).toBeTruthy();
   });
 });
