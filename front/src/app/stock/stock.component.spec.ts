@@ -27,9 +27,18 @@ describe('StockComponent', () => {
 
   it('should toggle', () => {
     const a: Article = { id: 'asdfafsd', name: 'asdfafds', price: 123, qty: 2 };
+    component.toggle(a);
+    component.toggle(a);
+    expect(component).toBeTruthy();
+  });
 
-    component.toggle(a);
-    component.toggle(a);
+  it('should remove', () => {
+    component.remove();
+    expect(component).toBeTruthy();
+  });
+
+  it('should refresh', () => {
+    component.refresh();
     expect(component).toBeTruthy();
   });
 });
