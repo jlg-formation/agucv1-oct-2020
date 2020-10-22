@@ -19,14 +19,15 @@ describe('workspace-project Create Article', () => {
     await page.navigateTo();
     await page.clickOnSeeStockBtn();
     await stockPage.clickOnAddBtn();
+    const toolName = 'Tournevis ' + Math.floor(Math.random() * 1e9);
     await createPage.fillForm({
-      name: 'Tournevis',
+      name: toolName,
       price: 1.23,
       qty: 34,
     } as NewArticle);
     await createPage.clickOnAddBtn();
     const article: NewArticle = await stockPage.getLastElement();
-    expect(article.name).toBeTruthy('Tournevis');
+    expect(article.name).toBeTruthy(toolName);
     expect(article.price).toBeTruthy(1.23);
     expect(article.qty).toBeTruthy(34);
   });
