@@ -1,6 +1,8 @@
 import express from "express";
 import serveIndex from "serve-index";
 import cors from "cors";
+import { crudity } from "crudity";
+import { Article } from "../front/src/app/interfaces/article";
 
 const app = express();
 const www = "../front/dist/front";
@@ -12,6 +14,8 @@ app.use((req, res, next) => {
   console.log("req.url", req.url);
   next();
 });
+
+app.use("/ws/articles", crudity<Article>());
 
 app.use(express.static(www));
 app.use(serveIndex(www, { icons: true }));

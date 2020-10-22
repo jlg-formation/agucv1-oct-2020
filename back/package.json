@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "crudity": "^1.2.7",
     "express": "^4.17.1",
     "nodemon": "^2.0.5",
     "serve-index": "^1.9.1",
