@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Hello JLG');
+    expect(page.getTitleText()).toEqual('Gérer efficacement votre stock');
   });
 
   afterEach(async () => {
