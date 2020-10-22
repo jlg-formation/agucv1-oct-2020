@@ -11,6 +11,9 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: ["./src/**/*.e2e-spec.ts"],
   capabilities: {
+    chromeOptions: {
+      // args: ["--headless"],
+    },
     browserName: "chrome",
   },
   chromeDriver:
