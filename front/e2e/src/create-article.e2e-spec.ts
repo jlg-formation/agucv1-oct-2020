@@ -2,7 +2,7 @@ import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 import { StockPage } from './stock.po';
 import { CreatePage } from './create.po';
-import { Article, NewArticle } from '../../src/app/interfaces/article';
+import { NewArticle } from '../../src/app/interfaces/article';
 
 describe('workspace-project Create Article', () => {
   let page: AppPage;

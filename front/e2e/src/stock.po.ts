@@ -1,5 +1,5 @@
-import { browser, by, element } from 'protractor';
-import { Article, NewArticle } from 'src/app/interfaces/article';
+import { by, element } from 'protractor';
+import { NewArticle } from 'src/app/interfaces/article';
 
 export class StockPage {
   async clickOnAddBtn(): Promise<void> {

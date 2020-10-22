@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { by, element } from 'protractor';
 import { NewArticle } from 'src/app/interfaces/article';
 
 export class CreatePage {
