@@ -49,4 +49,18 @@ describe('HttpArticleService', () => {
     req3.flush([]);
     expect(service).toBeTruthy();
   });
+
+  it('should not add an undefined article', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    let hasBeenCatched = false;
+    try {
+      service.add(undefined);
+    } catch (e) {
+      hasBeenCatched = true;
+    }
+    expect(hasBeenCatched).toBeTrue();
+    expect(service).toBeTruthy();
+  });
 });
