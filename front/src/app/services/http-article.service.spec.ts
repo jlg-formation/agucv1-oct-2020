@@ -63,4 +63,51 @@ describe('HttpArticleService', () => {
     expect(hasBeenCatched).toBeTrue();
     expect(service).toBeTruthy();
   });
+
+  it('should add a article with error', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    service.add({ name: 'titi', price: 123, qty: 100 });
+    const req2 = http.expectOne('/ws/articles');
+    expect(req2.request.method).toEqual('POST');
+    req2.flush('', { status: 405, statusText: 'method not allowed' });
+    expect(service).toBeTruthy();
+  });
+
+  it('should refresh', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    service.refresh();
+    const req2 = http.expectOne('/ws/articles');
+    expect(req2.request.method).toEqual('GET');
+    req2.flush([]);
+    expect(service).toBeTruthy();
+  });
+
+  it('should remove', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    service.remove([{ id: 'asdfafsd', name: 'titi', price: 123, qty: 100 }]);
+    const req2 = http.expectOne('/ws/articles');
+    expect(req2.request.method).toEqual('DELETE');
+    req2.flush('');
+    const req3 = http.expectOne('/ws/articles');
+    expect(req3.request.method).toEqual('GET');
+    req3.flush([]);
+    expect(service).toBeTruthy();
+  });
+
+  it('should remove with error', () => {
+    const req = http.expectOne('/ws/articles');
+    expect(req.request.method).toEqual('GET');
+    req.flush([]);
+    service.remove([{ id: 'asdfafsd', name: 'titi', price: 123, qty: 100 }]);
+    const req2 = http.expectOne('/ws/articles');
+    expect(req2.request.method).toEqual('DELETE');
+    req2.flush('', { status: 405, statusText: 'method not allowed' });
+    expect(service).toBeTruthy();
+  });
 });

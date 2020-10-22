@@ -7,6 +7,7 @@ describe('ArticleService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
+    localStorage.clear();
     service = TestBed.inject(ArticleService);
   });
 
